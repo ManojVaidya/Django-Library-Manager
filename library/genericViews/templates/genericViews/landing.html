@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <style>
+        .sty1{
+        padding-left:38%;
+        border-radius:8px;
+        }
+        .sty2{
+            width:330px;
+        }
+        button{
+        background-color:white;
+        padding:4px;
+        color:black;
+        border:2px solid black;
+        border-radius:4px;
+        }
+        button:hover{
+        border:2px solid green;
+        color: green;
+        }
+
+    </style>
+</head>
+<body>
+<h1 style="text-align:center">Library Manager</h1>
+<br><hr><hr><br><br><br>
+<div class="sty1">
+
+<a href="http://127.0.0.1:8000/library/bookenter/"> <button class="sty2">Add Book</button></a>
+<br><br>
+<a href="http://127.0.0.1:8000/library/allentries/"> <button class="sty2">View books</button></a>
+<br><br>
+<label>Book id:</label><input type="number" id="booknum">
+<a id="a1" href=""> <button onclick="myfun1()">Get Book</button></a>
+</div>
+<script>
+    function myfun1()
+    {
+        if(document.getElementById('booknum').value > 1)
+            document.getElementById('a1').href='http://127.0.0.1:8000/library/'+document.getElementById('booknum').value
+        else
+            alert('Id cannot be negative or zero');
+    }
+</script>
+</body>
+</html>

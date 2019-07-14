@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .s2{
+        background-color:white;
+        padding:4px;
+        color:black;
+        border:2px solid black;
+        border-radius:4px;
+        }
+        .s2:hover{
+        border:2px solid green;
+        color: green;
+        }
+    </style>
+</head>
+<body>
+<h2>Enter Book:</h2><br>
+<hr><br>
+
+<form action="{% url 'genericViews:bookenter' %}" method="post">
+    {% csrf_token %}
+<label>Title: </label>
+<input type="text" name="bookname" required><br><br>
+<label>Author: </label>
+<input type="text" name="authorname" required><br><br>
+<label>Category: </label>
+<select name="category">
+    <option value="cs">Computer Science</option>
+    <option value="ec">Electronics</option>
+    <option value="gate">Gate</option>
+    <option value="gre">GRE</option>
+</select><br><br>
+<label>Count: </label>
+<input type="number" name="count" min="1" max="100" required><br><br>
+<label>Call number: </label>
+<input type="text" name="callno" required><br><br>
+<label>Publication: </label>
+<input type="text" name="publication" required><br><br>
+<label>Section: </label>
+<label><input type="radio" name="section" value="library" required>Library</label>
+<label><input type="radio" name="section" value="reference" required>Reference</label><br><br>
+<input type="submit"  class="s2" value="Save">
+
+    </form>
+
+</body>
+</html>
+
